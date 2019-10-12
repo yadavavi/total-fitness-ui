@@ -1,0 +1,23 @@
+
+    .Login {
+      padding: 60px 0;
+      width: 28rem;
+      
+    left: 330px;
+    margin-top: 60px ;
+    margin-bottom: 50px;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  .email{
+    margin-top: 20px;
+  }
+  .loginButton{
+    margin-left: 85px;
+    margin-bottom: 20px;
+    background-color: #35c5dc;
+    
+  }
