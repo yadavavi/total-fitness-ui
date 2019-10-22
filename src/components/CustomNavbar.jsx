@@ -19,9 +19,9 @@ import './CustomNavbar.css'
       <Nav.Link eventKey={1} href="/about">About</Nav.Link>
       <Nav.Link eventKey={2} href="/news">News</Nav.Link>
       <NavDropdown alignRight title="More" id="collasible-nav-dropdown" >
-        <NavDropdown.Item><Link  to={"/login"}>Log-In</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link to={"/signup"}>Sign-Up</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link to={"/gymlocation"}>Gym Location</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link  to="/login">Log-In</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link to="/signup">Sign-Up</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link to="/gymlocation">Gym Location</Link></NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>

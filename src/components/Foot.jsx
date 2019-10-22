@@ -40,7 +40,7 @@ class Foot extends Component{
                    <Card>
                 <Card.Footer>
                  <Container className="copyWrite">
-                 &copy; {new Date().getFullYear()} Copyright: <a href="https://www.Total-Fitness.com"> Total-Fitness.com </a>
+                 &copy; {new Date().getFullYear()} Copyright: <a href="/"> Total-Fitness.com </a>
                  </Container>
                    </Card.Footer>
                    </Card>

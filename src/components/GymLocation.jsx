@@ -3,35 +3,24 @@ import {Container,Card,Carousel} from 'react-bootstrap';
 import './GymLocation.css';
 
 export default class GymLocation extends Component{
+
+   state={
+     showLocation : false,
+   }
+
+   toggleLocationHandler = () =>{
+
+    const toggleLocation = this.state.showLocation;
+    this.setState({
+      showLocation : !toggleLocation,
+    });
+
+   }
     render(){
-        return(
-            <Container className="gymContainer">
-                <Carousel>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="/assets/hero_bg_1.jpg"
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3> Find A Gym</h3>
-      
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="/assets/hero_bg_2.jpg"
-      alt="Second slide"
-    />
-    <Carousel.Caption>
-      <h3> Find A Gym</h3>
-      
-    </Carousel.Caption>
-  </Carousel.Item>
-  </Carousel>
-        <h2>Find A Gym</h2>
-           
+
+      let Location = null;
+      if(this.state.showLocation){
+           Location = ( <div>
             <Card className="gymCard">
                 
                 <Card.Header>Fitness-First</Card.Header>
@@ -64,6 +53,42 @@ export default class GymLocation extends Component{
                     </Card.Text>
                 </Card.Body>
             </Card>
+           </div> );
+
+      }
+
+
+        return(
+            <Container className="gymContainer">
+                <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/assets/hero_bg_1.jpg"
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3> Find A Gym</h3>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/assets/hero_bg_2.jpg"
+      alt="Second slide"
+    />
+    <Carousel.Caption>
+      <h3> Find A Gym</h3>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+  </Carousel>
+        <button onClick={this.toggleLocationHandler}>Find A Gym</button>
+         {  
+           Location
+           
+          }
             </Container>
 
         );

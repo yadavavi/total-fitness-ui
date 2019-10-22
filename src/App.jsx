@@ -12,8 +12,12 @@ import GymLocation from './components/GymLocation';
 
 
 class App extends Component {
+
+
+
   render(){
     let user= {
+       
        Name: "Avinash",
        Age:24,
     };
