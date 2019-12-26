@@ -10,6 +10,7 @@ import Foot from './components/Foot';
 import Login from './components/Login';
 import GymLocation from './components/GymLocation';
 import Dashboard  from './components/Dashboard';
+import Editform from './components/Editform';
 
 
 class App extends Component {
@@ -49,6 +50,7 @@ handleLogin = () =>{
               handleLogin={this.handleLogin}/>)}/>
       <Route path="/login" render={(props)=>(<Login {...props}/>)}/>
       <Route path="/gymlocation" component={GymLocation}/>
+      <Route path="/editform/user/:userId" component={Editform}/>
       <Route  exact 
               path="/dashboard" 
               render={props=>(<Dashboard {...props} 

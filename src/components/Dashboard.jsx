@@ -1,9 +1,11 @@
 import React,{Component} from 'react';
 import './Dashboard.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import { API_DOMAIN } from '../Constants';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import BootstrapTable from "react-bootstrap-table-next";
+import {header} from "./Sessionhandler";
 
 class Dashboard extends Component  {
     constructor(props){
@@ -19,14 +21,15 @@ componentDidMount=()=>{
 this.showUsers();
 
 }
-showUsers = () =>{
 
+showUsers = () =>{
 axios({ 
  url:`${API_DOMAIN}/api/v1/users`,
  method : 'get',
+ headers: header(),
 })
 .then((res) => {
-    debugger
+    
         this.setState({
             users: res.data.data.users,
             count: res.data.data.count,
@@ -37,8 +40,20 @@ axios({
 
 
 }
+
+
+
+
+buttonFormatter = (cell,row) => {
+
+   let id = row.id;
+   return <Link to={`/editform/user/${row.id}`}><button> Edit </button></Link>
+
+}
+
     
 render(){
+  
      const columns=[{
         dataField:'id',
         text: 'User ID',
@@ -64,16 +79,22 @@ render(){
         dataField:'mobile',
         text: 'Mobile Number'
 
-     }]
+     },{
+      dataField:'action',
+      text:'Edit',
+      formatter: this.buttonFormatter,
 
-console.log(this.state.users, 'users')
-    
+     }];
+
+//console.log(this.state.users, 'users')
+
 return(
     
 
 <div className="dashboard">
     HI
     <h2>Status: {this.props.loggedInStatus}</h2>
+
     <BootstrapTable keyField='id' data={this.state.users} columns= {columns} striped
   hover
   condensed></BootstrapTable>
